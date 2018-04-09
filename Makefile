@@ -93,3 +93,24 @@ edit::
 live::
 	# -- do not enable --delete as it will destroy stats folder
 	rsync -av --exclude=.git --exclude=cache/ ./ delta:Sites/openjscad.org/
+
+pjName := OpenJSCAD
+
+docker:
+	docker run \
+		--name ${pjName} \
+		--rm \
+		-ti \
+		-p 3080:80 \
+		-p 3088:8080 \
+		-p 3030:3000 \
+		-p 3000:8000 \
+		-v $$(pwd):/root/${pjName} \
+		mooxe/node \
+		/bin/bash
+
+in:
+	docker exec \
+		-ti \
+		${pjName} \
+		/bin/bash
