@@ -10,6 +10,8 @@
     "shelljs": "^0.8.1"
   },
   "dependencies": {
+    "@jscad/core": "^0.2.3",
+    "@jscad/csg": "^0.5.4",
     "babylonjs": "^3.2.0-beta.4",
     "cannon": "^0.6.2",
     "cfx.dom": "^0.1.0",
